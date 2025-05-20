@@ -3,24 +3,24 @@ import type { editor } from 'monaco-editor'
 import MonacoEditor from '@monaco-editor/react'
 import { createATA } from './ata'
 
-export interface EditorFile {
+export interface IEditorFile {
   name: string
   value: string
   language: string
 }
 
-interface Props {
-  file: EditorFile
+interface IProps {
+  file: IEditorFile
   onChange?: EditorProps['onChange']
   options?: editor.IStandaloneEditorConstructionOptions
 }
 
-export default function Editor(props: Props) {
+export default function Editor(Props: IProps) {
   const {
     file,
     onChange,
     options,
-  } = props
+  } = Props
 
   const handleEditorMount: OnMount = (editor, monaco) => {
     editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyJ, () => {

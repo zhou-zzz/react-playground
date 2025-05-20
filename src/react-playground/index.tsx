@@ -1,7 +1,7 @@
 import { Allotment } from 'allotment'
-import CodeEditor from './components/code-editor'
-import Header from './components/header'
-import Preview from './components/preview/'
+import CodeEditor from '@/components/code-editor'
+import Header from '@/components/header'
+import Preview from '@/components/preview'
 import 'allotment/dist/style.css'
 
 export default function ReactPlayground() {
