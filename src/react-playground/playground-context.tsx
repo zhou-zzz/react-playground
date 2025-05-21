@@ -1,37 +1,12 @@
 import type { PropsWithChildren } from 'react'
+import type { IFiles, IPlaygroundContext } from './types'
 import { createContext, useState } from 'react'
-import { fileName2Language } from '../utils'
-import AppCss from './template/app.css?raw'
-import App from './template/app.tsx?raw'
-import importMap from './template/import-map.json?raw'
-import main from './template/main.tsx?raw'
-
-export interface IFile {
-  name: string
-  value: string
-  language: string
-}
-
-export interface IFiles {
-  [key: string]: IFile
-}
-
-export interface IPlaygroundContext {
-  files: IFiles
-  selectedFileName: string
-  setSelectedFileName: (fileName: string) => void
-  setFiles: (files: IFiles) => void
-  addFile: (fileName: string) => void
-  removeFile: (fileName: string) => void
-  updateFileName: (oldFieldName: string, newFieldName: string) => void
-}
-
-// app 文件名
-export const APP_COMPONENT_FILE_NAME = 'app.tsx'
-// esm 模块映射文件名
-export const IMPORT_MAP_FILE_NAME = 'import-map.json'
-// app 入口文件名
-export const ENTRY_FILE_NAME = 'main.tsx'
+import { APP_COMPONENT_FILE_NAME, ENTRY_FILE_NAME, IMPORT_MAP_FILE_NAME } from './constants'
+import AppCss from './constants/template/app.css?raw'
+import App from './constants/template/app.tsx?raw'
+import importMap from './constants/template/import-map.json?raw'
+import main from './constants/template/main.tsx?raw'
+import { fileName2Language } from './utils'
 
 export const initFiles: IFiles = {
   [ENTRY_FILE_NAME]: {
@@ -45,41 +20,6 @@ export const initFiles: IFiles = {
     value: App,
   },
   'app.css': {
-    name: 'app.css',
-    language: 'css',
-    value: AppCss,
-  },
-  'app7.css': {
-    name: 'app.css',
-    language: 'css',
-    value: AppCss,
-  },
-  'app6.css': {
-    name: 'app.css',
-    language: 'css',
-    value: AppCss,
-  },
-  'app5.css': {
-    name: 'app.css',
-    language: 'css',
-    value: AppCss,
-  },
-  'app4.css': {
-    name: 'app.css',
-    language: 'css',
-    value: AppCss,
-  },
-  'app3.css': {
-    name: 'app.css',
-    language: 'css',
-    value: AppCss,
-  },
-  'app2.css': {
-    name: 'app.css',
-    language: 'css',
-    value: AppCss,
-  },
-  'app1.css': {
     name: 'app.css',
     language: 'css',
     value: AppCss,
